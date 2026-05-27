@@ -18,9 +18,6 @@ Existing document anti-spoofing datasets mainly focus on identity documents. Rec
 
 ## Status
 
-Initial public release in progress.
-Paper and dataset will be added soon.
-
 Publication: [Receipt Replay OOD (arXiv)](https://arxiv.org/pdf/2605.26855)
 
 ## Upcoming update
