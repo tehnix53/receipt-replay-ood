@@ -20,3 +20,32 @@ Existing document anti-spoofing datasets mainly focus on identity documents. Rec
 
 Initial public release in progress.
 Paper and dataset will be added soon.
+
+Publication: [Receipt Replay OOD (arXiv)](https://arxiv.org/pdf/2605.26855)
+
+## Upcoming update
+
+Metadata with annotation of 4 corners, environment settings and hands presence will be added by June 1, 2026.
+
+## Metadata labeling tool
+
+A small Streamlit app (same folder-browser pattern as `fraud_trend_viewer`) lives in `metadata_viewer/`:
+
+```bash
+cd metadata_viewer
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Requires **Python 3.10+** — do not use macOS `python` (often 3.7).
+
+Run from the repo root if you prefer: `streamlit run metadata_viewer/app.py`
+
+1. **Choose folder** — recursively indexes all images under the dataset root.
+2. Creates or updates **`metadata.csv`** in that folder with columns: `path`, `box`, `environment`, `fingers_presence`.
+3. **← / →** buttons or keyboard arrows to move between images.
+4. Draw a **polygon** on the receipt and **Save polygon** (stored as JSON in `box`).
+5. Set **indoor** / **outdoor** and **fingers** / **without_fingers**, then save.
+
+Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/replay_0001.jpeg`).
