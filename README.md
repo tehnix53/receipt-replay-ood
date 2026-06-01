@@ -13,12 +13,7 @@ The dataset contains:
 - metadata for acquisition conditions
 
 <!-- dataset-preview-start -->
-![preview](data/LIVE/Huawei%20P30%20Lite/live_0380.jpeg) ![preview](data/LIVE/Honor%208A/live_0126.jpeg) ![preview](data/LIVE/Honor%208A/live_0013.jpeg) ![preview](data/LIVE/Honor%208A/live_0141.jpeg)
-
-![preview](data/REPLAY/Phillips%20PHL%20271V8%20and%20MacBook%20Pro%20M1/replay_1190.jpeg) ![preview](data/REPLAY/Samsung%20Galaxy%20J3%20by%20Honor%208A/replay_1256.jpeg) ![preview](data/REPLAY/Huawei%20P30%20Lite%20by%20Honor%208A/replay_0640.jpeg) ![preview](data/LIVE/Huawei%20P30%20Lite/live_0328.jpeg)
-
-![preview](data/REPLAY/Lenovo%20ThinkBook%2015%20G2%20by%20Honor%208A/replay_0726.jpeg) ![preview](data/REPLAY/Honor%208A%20by%20Samsung%20Galaxy%20J3/replay_0602.jpeg) ![preview](data/LIVE/Honor%208A/live_0058.jpeg) ![preview](data/REPLAY/Samsung%20Galaxy%20J3%20by%20Honor%208A/replay_1252.jpeg)
-
+![Dataset preview](docs/overview_grid.jpg)
 <!-- dataset-preview-end -->
 
 ## Motivation
