@@ -1,7 +1,7 @@
 path,box,environment,fingers_presence
 live_0001.jpeg,"{""label"": ""receipt"", ""shape_type"": ""polygon"", ""points"": [[220.9, 247.74], [730.84, 286.97], [753.55, 920.77], [284.9, 920.77]], ""image_width"": 960, ""image_height"": 1280}",indoor,fingers
 live_0002.jpeg,"{""label"": ""receipt"", ""shape_type"": ""polygon"", ""points"": [[206.45, 359.23], [673.03, 256.0], [796.9, 1127.23], [307.61, 1226.32]], ""image_width"": 960, ""image_height"": 1280}",outdoor,fingers
-live_0003.jpeg,"{""label"": ""receipt"", ""shape_type"": ""polygon"", ""points"": [[241.55, 272.52], [788.65, 218.84], [786.58, 1001.29], [253.94, 990.97]], ""image_width"": 960, ""image_height"": 1280}",indoor,fingers
+live_0003.jpeg,"{""label"": ""receipt"", ""shape_type"": ""polygon"", ""points"": [[241.55, 280.77], [796.9, 220.9], [792.77, 1011.61], [243.61, 988.9]], ""image_width"": 960, ""image_height"": 1280}",indoor,fingers
 live_0004.jpeg,"{""label"": ""receipt"", ""shape_type"": ""polygon"", ""points"": [[500.51, 362.67], [840.21, 344.62], [848.41, 538.26], [508.72, 548.1]], ""image_width"": 1280, ""image_height"": 960}",indoor,without_fingers
 live_0005.jpeg,"{""label"": ""receipt"", ""shape_type"": ""polygon"", ""points"": [[415.18, 313.44], [946.87, 256.0], [976.41, 661.33], [457.85, 659.69]], ""image_width"": 1280, ""image_height"": 960}",indoor,without_fingers
 live_0006.jpeg,"{""label"": ""receipt"", ""shape_type"": ""polygon"", ""points"": [[299.35, 305.55], [695.74, 284.9], [730.84, 924.9], [266.32, 926.97]], ""image_width"": 960, ""image_height"": 1280}",indoor,fingers
