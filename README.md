@@ -83,6 +83,7 @@ Run from the repo root if you prefer: `streamlit run metadata_viewer/app.py`
 Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/live_0001.jpeg`).
 
 ## How it works
+![Metadata labeling demo](docs/metadata_viewer_demo.gif)
 
 
 ## Citation
