@@ -84,11 +84,7 @@ Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/li
 
 ## How it works
 
-<video src="docs/metadata_viewer_demo.mp4" controls width="720">
-  Your browser does not support the video tag.
-</video>
-
-[Download demo video](docs/metadata_viewer_demo.mp4)
+![Metadata labeling demo](docs/metadata_viewer_demo.gif)
 
 ## Citation
 
