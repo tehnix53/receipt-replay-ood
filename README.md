@@ -82,12 +82,13 @@ Run from the repo root if you prefer: `streamlit run metadata_viewer/app.py`
 
 Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/live_0001.jpeg`).
 
-### How it works
+## How it works
 
-<video src="metadata_viewer/demo_1087.mov" controls width="720">
-  Your browser does not support embedded video.
-  <a href="metadata_viewer/demo_1087.mov">Download demo_1087.mov</a>.
+<video src="docs/metadata_viewer_demo.mp4" controls width="720">
+  Your browser does not support the video tag.
 </video>
+
+[Download demo video](docs/metadata_viewer_demo.mp4)
 
 ## Citation
 
