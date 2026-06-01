@@ -86,6 +86,14 @@ def _fingers_to_label(value: str) -> str:
     return "(not set)"
 
 
+def _row_has_markup(row: dict[str, str]) -> bool:
+    return bool(
+        (row.get("box") or "").strip()
+        or (row.get("environment") or "").strip()
+        or (row.get("fingers_presence") or "").strip()
+    )
+
+
 def _short_label(text: str, max_len: int = 36) -> str:
     text = text.strip()
     if len(text) <= max_len:
@@ -365,14 +373,11 @@ def _render_sidebar() -> None:
         if st.session_state.dataset_root:
             st.caption(f"Root: `{st.session_state.dataset_root}`")
             st.caption(f"CSV: `{st.session_state.metadata_csv}`")
-            labeled = sum(
-                1
-                for r in st.session_state.metadata_rows
-                if r.get("box") or r.get("environment") or r.get("fingers_presence")
-            )
+            labeled = sum(1 for r in st.session_state.metadata_rows if _row_has_markup(r))
+            unlabeled = len(st.session_state.folder_scan_index) - labeled
             st.caption(
                 f"{len(st.session_state.folder_scan_index)} images · "
-                f"{labeled} with any label"
+                f"{labeled} labeled · {unlabeled} without markup (yellow)"
             )
 
         if st.session_state.folder_scan_index:
@@ -390,16 +395,24 @@ def _render_sidebar() -> None:
                     if row.get("fingers_presence"):
                         flags.append("fin" if row["fingers_presence"] == "fingers" else "no-fin")
                     flag_txt = f" [{', '.join(flags)}]" if flags else ""
+                    has_markup = _row_has_markup(row)
                     thumb = Path(item["thumb_path"])
-                    with st.container(border=is_active):
+                    if is_active:
+                        item_key = f"thumb_active_{i}"
+                    elif not has_markup:
+                        item_key = f"thumb_unlabeled_{i}"
+                    else:
+                        item_key = f"thumb_labeled_{i}"
+                    with st.container(border=is_active, key=item_key):
                         if thumb.exists():
                             st.image(str(thumb), use_container_width=True)
                         btn_label = f"{i + 1}/{total_thumbs} · {_short_label(item['name'])}{flag_txt}"
+                        btn_type = "primary" if is_active else "secondary"
                         if st.button(
                             btn_label,
                             key=f"thumb_{i}_{_safe_key(item['path'])}",
                             use_container_width=True,
-                            type="primary" if is_active else "secondary",
+                            type=btn_type,
                             help=item["rel_path"],
                         ):
                             _set_image_index(i)
@@ -434,7 +447,7 @@ def _render_main() -> None:
     )
     render_keyboard_nav()
 
-    nav1, nav2, nav3, nav4 = st.columns([1, 1, 2, 1])
+    nav1, nav2, nav3 = st.columns([1, 1, 3])
     with nav1:
         if st.button("← Previous (A)", key="btn_prev_image", disabled=idx <= 0):
             _nav_delta(-1)
@@ -448,18 +461,6 @@ def _render_main() -> None:
             "Hotkeys: **←** **→** or **A** **D**. "
             "Labels auto-save when you go to another image."
         )
-    with nav4:
-        jump = st.number_input(
-            "Go to #",
-            min_value=1,
-            max_value=max(1, total),
-            value=idx + 1,
-            step=1,
-            key="jump_to_index",
-        )
-        if int(jump) - 1 != idx and st.button("Go", key="btn_jump"):
-            _set_image_index(int(jump) - 1)
-            st.rerun()
 
     saved_pts = box_points_image_space(parse_box_json(row.get("box", "")))
 

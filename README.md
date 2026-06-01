@@ -12,6 +12,15 @@ The dataset contains:
 - receipt localization annotations
 - metadata for acquisition conditions
 
+<!-- dataset-preview-start -->
+![preview](data/LIVE/Huawei%20P30%20Lite/live_0380.jpeg) ![preview](data/LIVE/Honor%208A/live_0126.jpeg) ![preview](data/LIVE/Honor%208A/live_0013.jpeg) ![preview](data/LIVE/Honor%208A/live_0141.jpeg)
+
+![preview](data/REPLAY/Phillips%20PHL%20271V8%20and%20MacBook%20Pro%20M1/replay_1190.jpeg) ![preview](data/REPLAY/Samsung%20Galaxy%20J3%20by%20Honor%208A/replay_1256.jpeg) ![preview](data/REPLAY/Huawei%20P30%20Lite%20by%20Honor%208A/replay_0640.jpeg) ![preview](data/LIVE/Huawei%20P30%20Lite/live_0328.jpeg)
+
+![preview](data/REPLAY/Lenovo%20ThinkBook%2015%20G2%20by%20Honor%208A/replay_0726.jpeg) ![preview](data/REPLAY/Honor%208A%20by%20Samsung%20Galaxy%20J3/replay_0602.jpeg) ![preview](data/LIVE/Honor%208A/live_0058.jpeg) ![preview](data/REPLAY/Samsung%20Galaxy%20J3%20by%20Honor%208A/replay_1252.jpeg)
+
+<!-- dataset-preview-end -->
+
 ## Motivation
 
 Existing document anti-spoofing datasets mainly focus on identity documents. Receipt Replay OOD introduces receipt-based replay attacks as a lightweight and privacy-safe OOD benchmark.
@@ -19,10 +28,6 @@ Existing document anti-spoofing datasets mainly focus on identity documents. Rec
 ## Status
 
 Publication: [Receipt Replay OOD (arXiv)](https://arxiv.org/pdf/2605.26855)
-
-## Upcoming update
-
-Metadata with annotation of 4 corners, environment settings and hands presence will be added by June 1, 2026.
 
 ## Metadata labeling tool
 
@@ -45,4 +50,4 @@ Run from the repo root if you prefer: `streamlit run metadata_viewer/app.py`
 4. Draw a **polygon** on the receipt and **Save polygon** (stored as JSON in `box`).
 5. Set **indoor** / **outdoor** and **fingers** / **without_fingers**, then save.
 
-Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/replay_0001.jpeg`).
+Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/live_0001.jpeg`).

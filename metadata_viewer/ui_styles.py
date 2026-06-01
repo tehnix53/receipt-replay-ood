@@ -44,6 +44,23 @@ div[class*="st-key-thumb_list"] button p {
     font-size: 0.78rem !important;
     text-align: left !important;
 }
+
+/* Sidebar: no box / environment / fingers yet */
+div[class*="st-key-thumb_unlabeled_"] {
+    background-color: #fff3b0 !important;
+    border: 2px solid #e6c200 !important;
+    border-radius: 8px;
+    padding: 0.2rem 0.35rem 0.35rem !important;
+    margin-bottom: 0.35rem !important;
+}
+div[class*="st-key-thumb_unlabeled_"] button {
+    background-color: #fff9cc !important;
+    border-color: #d4a800 !important;
+    color: #5c4a00 !important;
+}
+div[class*="st-key-thumb_unlabeled_"] button p {
+    color: #5c4a00 !important;
+}
 </style>
 """
 
