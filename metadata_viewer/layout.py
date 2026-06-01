@@ -47,6 +47,51 @@ def canvas_background(bgr: np.ndarray, layout: ViewerLayout) -> Image.Image:
     return frame
 
 
+def overlay_polygon_on_frame(
+    frame: Image.Image,
+    layout: ViewerLayout,
+    image_points: list[tuple[float, float]],
+    *,
+    stroke_rgb: tuple[int, int, int] = (0, 229, 255),
+    fill_rgba: tuple[int, int, int, int] = (0, 229, 255, 48),
+) -> Image.Image:
+    """Draw saved receipt polygon on the viewer frame (visible under the canvas)."""
+    if len(image_points) < 3:
+        return frame
+    from PIL import ImageDraw
+
+    canvas_pts = image_points_to_canvas(image_points, layout)
+    if len(canvas_pts) < 3:
+        return frame
+    out = frame.copy()
+    draw = ImageDraw.Draw(out, "RGBA")
+    draw.polygon(canvas_pts, fill=fill_rgba, outline=stroke_rgb + (255,), width=3)
+    return out
+
+
+def draw_polygon_on_bgr(
+    bgr: np.ndarray,
+    image_points: list[tuple[float, float]],
+    *,
+    stroke_bgr: tuple[int, int, int] = (255, 229, 0),
+    fill_bgr: tuple[int, int, int] = (255, 229, 0),
+    fill_alpha: float = 0.22,
+) -> np.ndarray:
+    """Draw polygon on a BGR image (e.g. sidebar thumbnails)."""
+    if len(image_points) < 3:
+        return bgr
+    h, w = bgr.shape[:2]
+    pts = np.array(
+        [[int(round(x)), int(round(y))] for x, y in image_points],
+        dtype=np.int32,
+    )
+    overlay = bgr.copy()
+    cv2.fillPoly(overlay, [pts], fill_bgr)
+    cv2.addWeighted(overlay, fill_alpha, bgr, 1.0 - fill_alpha, 0, bgr)
+    cv2.polylines(bgr, [pts], isClosed=True, color=stroke_bgr, thickness=2, lineType=cv2.LINE_AA)
+    return bgr
+
+
 def canvas_points_to_image(
     pts: list[tuple[float, float]],
     layout: ViewerLayout,

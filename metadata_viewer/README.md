@@ -28,8 +28,9 @@ streamlit run app.py
 1. Click **Choose folder** and select your dataset root (e.g. `data/`).
 2. The app scans all nested `jpg` / `jpeg` / `png` / `webp` files and writes **`metadata.csv`** in that folder.
 3. Navigate with **← / →** or **A / D** (also **Alt+← / Alt+→**).
-4. Draw a polygon around the receipt, then **Save polygon** (JSON in the `box` column).
-5. Set **indoor** / **outdoor** and **fingers** / **without_fingers**, then save.
+4. Draw a polygon around the receipt; set **indoor** / **outdoor** and **fingers** / **without_fingers**.
+5. Labels **auto-save to `metadata.csv`** when you move to another image (next/prev, hotkeys, or sidebar).
+6. Use **Save all fields** (or per-field buttons) to force-save without leaving the image.
 
 ## CSV columns
 
