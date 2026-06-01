@@ -16,13 +16,48 @@ The dataset contains:
 ![Dataset preview](docs/overview_grid.jpg)
 <!-- dataset-preview-end -->
 
+## Dataset statistics
+
+| Category | Count |
+|----------|------:|
+| Bona fide | 497 |
+| Replay attacks | 804 |
+| Mobile devices | 3 |
+| Laptops | 3 |
+
+## Dataset folder structure
+
+```
+data/
+├── LIVE/
+│   ├── Honor 8A/
+│   ├── Huawei P30 Lite/
+│   └── Samsung Galaxy J3/
+├── REPLAY/
+│   ├── Honor 8A by Samsung Galaxy J3/
+│   ├── Huawei P30 Lite by Honor 8A/
+│   ├── Lenovo ThinkBook 15 G2 by Honor 8A/
+│   ├── Phillips PHL 271V8 and MacBook Pro M1/
+│   └── Samsung Galaxy J3 by Honor 8A/
+└── metadata.csv
+```
+
+## Metadata description
+
+Metadata fields:
+
+- `path`
+- `environment` (`indoor` / `outdoor`)
+- `fingers_presence` (`fingers` / `without_fingers`)
+- `box` (receipt polygon coordinates)
+
 ## Motivation
 
 Existing document anti-spoofing datasets mainly focus on identity documents. Receipt Replay OOD introduces receipt-based replay attacks as a lightweight and privacy-safe OOD benchmark.
 
-## Status
+## Publication
 
-Publication: [Receipt Replay OOD (arXiv)](https://arxiv.org/pdf/2605.26855)
+[Receipt Replay OOD (arXiv)](https://arxiv.org/pdf/2605.26855)
 
 ## Metadata labeling tool
 
@@ -46,3 +81,19 @@ Run from the repo root if you prefer: `streamlit run metadata_viewer/app.py`
 5. Set **indoor** / **outdoor** and **fingers** / **without_fingers**, then save.
 
 Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/live_0001.jpeg`).
+
+## Citation
+
+If you use Receipt Replay OOD in your research, please cite:
+
+```bibtex
+@misc{vinogradov2026receiptreplayoodsmall,
+      title={Receipt Replay OOD: A Small Benchmark for Screen Replay Detection Under Domain Shift},
+      author={Alexander Vinogradov},
+      year={2026},
+      eprint={2605.26855},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2605.26855},
+}
+```
