@@ -55,9 +55,9 @@ Metadata fields:
 
 Existing document anti-spoofing datasets mainly focus on identity documents. Receipt Replay OOD introduces receipt-based replay attacks as a lightweight and privacy-safe OOD benchmark.
 
-## Status
+## Publication
 
-Publication: [Receipt Replay OOD (arXiv)](https://arxiv.org/pdf/2605.26855)
+[Receipt Replay OOD (arXiv)](https://arxiv.org/pdf/2605.26855)
 
 ## Metadata labeling tool
 
