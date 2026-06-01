@@ -82,6 +82,14 @@ Run from the repo root if you prefer: `streamlit run metadata_viewer/app.py`
 
 Paths in the CSV are relative to the chosen dataset root (e.g. `LIVE/Honor 8A/live_0001.jpeg`).
 
+### How it works
+
+<figure class="video_container">
+  <video controls width="720" preload="metadata">
+    <source src="metadata_viewer/demo_1087.mp4" type="video/mp4">
+  </video>
+</figure>
+
 ## Citation
 
 If you use Receipt Replay OOD in your research, please cite:
